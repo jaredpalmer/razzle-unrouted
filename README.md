@@ -1,27 +1,21 @@
-# Razzle Preact Example
+# Razzle Unrouted
 
-## How to use
-Download the example [or clone the whole project](https://github.com/jaredpalmer/razzle.git):
+Sometimes, you don't want to build an SPA.
 
-```bash
-curl https://codeload.github.com/jaredpalmer/razzle/tar.gz/master | tar -xz --strip=2 razzle-master/examples/with-preact
-cd with-preact
-```
+## The Problem with Single Page Applications...
 
-Install it and run:
+They take a while. For a single endpoint you need to write an endpoint and then write the data fetch. In contrast, with good ol' web app, you justget the data and pass it to your template.
 
-```bash
-yarn install
-yarn start
-```
+## Speaking of templates...
 
-## Idea behind the example
-This shows how to setup [Preact](https://github.com/developit/preact) with Razzle. 
+Templates suck. Component rock. React is a great templating language. However, in prior projects like express-engine and express-react-views, they required completely separate client javascript. What does that mean? Well you'd get to use React for templating, but then would need to sprinkle client side javascript wherever you still needed it.
 
-Here is a list of changes from Razzle's base template:
+## The Solution
 
-  1. Install `babel-plugin-transform-react-jsx` as a devDependency. 
-  2. Extend Razzle's babel config with a custom `.babelrc`
-  3. Install `preact` and `preact-render-to-string`
-  4. Remove `react`, `react-dom`, `react-router-dom` entirely
-  5. Update `server.js` to use `preact-render-to-string`'s `render` function. Also remove the `<div id="root">` element from our html template since Preact can render to the body.
+This is an example of how to solve this problem. Using Razzle, this project show s how you could use Preact as a templating language for express, but then also reuse the same components on the client (without the need for client-side routing). It works by creating a webpack entry for each component in the views directory and using express middleware to inject props.
+
+## Differences from other (p)React apps
+
+* There is no "router." You just use vanilla `<a>` tags.
+* You'll need to handle CSRF
+* Data is fetched in express controllers (for now).
