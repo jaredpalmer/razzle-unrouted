@@ -7,7 +7,7 @@ class About extends Component {
     return (
       <div class="Preact">
         <h1>{props.title}</h1>
-        <a href="/">Home</a>{' '}
+        <a href="/">Home</a>
         <a href="/about" style={{ color: 'black' }}>
           About
         </a>
@@ -19,21 +19,13 @@ class About extends Component {
 
 if (typeof window !== 'undefined') {
   let data = window.__DATA__;
-  let root;
+
   function renderApp() {
-    root = render(
-      <About {...data} />,
-      document.body,
-      document.body.firstElementChild
-    );
+    render(<About {...data} />, document.body, document.body.firstElementChild);
   }
 
   // Initial render.
   renderApp();
-
-  if (module.hot) {
-    module.hot.accept();
-  }
 }
 
 export default About;

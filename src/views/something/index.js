@@ -21,10 +21,9 @@ class Something extends Component {
 }
 
 if (typeof window !== 'undefined') {
-  let root;
   let data = window.__DATA__;
   function renderApp() {
-    root = render(
+    render(
       <Something {...data} />,
       document.body,
       document.body.firstElementChild
@@ -33,10 +32,6 @@ if (typeof window !== 'undefined') {
 
   // Initial render.
   renderApp();
-
-  if (module.hot) {
-    module.hot.accept();
-  }
 }
 
 export default Something;

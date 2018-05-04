@@ -19,21 +19,13 @@ class Home extends Component {
 
 if (typeof window !== 'undefined') {
   let data = window.__DATA__;
-  let root;
+
   function renderApp() {
-    root = render(
-      <Home {...data} />,
-      document.body,
-      document.body.firstElementChild
-    );
+    render(<Home {...data} />, document.body, document.body.firstElementChild);
   }
 
   // Initial render.
   renderApp();
-
-  if (module.hot) {
-    module.hot.accept();
-  }
 }
 
 export default Home;
