@@ -16,7 +16,7 @@ This is an example of how to solve this problem. Using Razzle, this project show
 
 ## Differences from other (p)React apps
 
-* There is no "router." You just use vanilla `<a>` tags
+* There is no client-side "router." You just use vanilla `<a>` tags
 * You'll need to handle CSRF
 * You'll need cookies and sessions for authentication
 * Data is fetched in express controllers (for now)
