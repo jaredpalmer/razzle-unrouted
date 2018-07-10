@@ -8,7 +8,7 @@ They take a while. For a single view you need to write an API endpoint and then 
 
 ## Speaking of templates...
 
-Templates suck. Components kick ass. As it turns out, React is a great templating language. However, in prior projects like express-engine and express-react-views, they required completely separate client-side JavaScript. What does that mean? Well you'd get to use React for templating, but then would need to sprinkle client-side JavaScript wherever you still needed it. So like modals and buttons and other stuff wouldn't work, because that code was never going to be run in the browser.
+Templates suck. Components kick ass. As it turns out, React is a great templating language. However, in prior projects like express-engine and express-react-views, they required completely separate client-side JavaScript. What does that mean? Well you'd get to use React for templating, but then would need to sprinkle client-side JavaScript wherever you still needed it. For example, modals and buttons and other stuff wouldn't work, because that code was never going to be run in the browser.
 
 ## The Solution
 
